@@ -4,23 +4,26 @@
     dir: "../demo-build",
 
     optimizeCss: "standard",
-    // optimize: "none",
+
+    optimize: "none",
     // inlining ftw
     inlineText: true,
 
     pragmasOnSave: {
         //removes Handlebars.Parser code (used to compile template strings) set
         //it to `false` if you need to parse template strings even after build
-        excludeHbsParser : true,
+        excludeHbsParser : false,
         // kills the entire plugin set once it's built.
-        excludeHbs: true,
+        excludeHbs: false,
         // removes i18n precompiler, handlebars and json2
-        excludeAfterBuild: true
+        excludeAfterBuild: false
     },
 
     paths: {
-      "hbs": "../hbs",
-      "Handlebars" : "../Handlebars"
+      "hbs": "myfolder/hbs",
+      "Handlebars" : "myfolder/Handlebars",
+
+      'hbs/underscore': 'myfolder/underscore-1.3.3'
       // if your project is already using underscore.js and you want to keep
       // the hbs plugin even after build (excludeHbs:false) you should set the
       // "hbs/underscore" path to point to the shared location like
